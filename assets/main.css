@@ -1,0 +1,1055 @@
+/* ----------------------------------------------- Includes --------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&family=Press+Start+2P&display=swap');
+
+/* ----------------------------------------------- Resets -------------------------------------------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Press Start 2P', cursive; */
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #262626;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+body::-webkit-scrollbar{
+    width: 5px;
+    
+}
+body::-webkit-scrollbar-track{
+    background-color: rgba(3, 3, 3, 0.5);
+    
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #F2CB05;
+    border-radius: 5px;
+}
+
+
+/* ----------------------------------------------- Header -------------------------------------------------- */
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.top{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 50px;
+}
+
+@media(max-width:600px){
+    .top{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu{
+        margin: 10px;
+    }
+}
+
+@media(max-width:430px){
+    .menu ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .menu ul li{
+        align-self: baseline;
+    }
+}
+
+/* ----------------------------------------------- Header logo -------------------------------------------------- */
+
+.logo{
+    position: relative;
+    cursor: pointer;
+    transform: translateX(-60px);
+    animation: enterAnima 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes enterAnima {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.logo a{
+    color: white;
+}
+.logo h1{
+    transition: 0.3s linear;
+}
+.logo h1:hover{
+    transform: scale(1.2);
+}
+.logo h1::before{
+    content: attr(data-text);
+    position: absolute;
+    color: #F2CB05;
+    width: 0%;
+    overflow: hidden;
+    transition: 1s;
+    border-right: 7px solid black;
+    opacity: 0;
+}
+.logo h1:hover::before{
+    opacity: 1;
+    border-right: 7px solid #F2CB05;
+    width: 100%;
+    filter: drop-shadow(0 0 25px #F2CB05);
+}
+
+/* ----------------------------------------------- nav menu header -------------------------------------------------- */
+.menu{
+    transform: translateX(60px);
+    opacity: 0;
+    animation: enterAnima 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition: linear;
+}
+
+.menu ul li{
+    position: relative;
+    transition: 0.3s linear;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu ul li a{
+    position: relative;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 1.1em;
+    /* -webkit-text-stroke: 1px white; */
+    font-size: 1.5em;
+    /* font-weight: bold;  */
+}
+
+.menu ul li a::before{
+    content: attr(data-text);
+    position: absolute;
+    color: #F2CB05;
+    width: 0%;
+    overflow: hidden;
+    transition: 1s;
+    border-right: 5px solid #F2CB05;
+    -webkit-text-stroke: #F2CB05;
+    /* opacity: 0; */
+}
+.menu ul li:hover{
+    transform: scale(1.2);
+}
+
+.menu ul li a:hover::before{
+    opacity: 1;
+    border-right: 5px solid #F2CB05;
+    width: 100%;
+    filter: drop-shadow(0 0 30px #F2CB05);
+}
+
+/* ----------------------------------------------- main -------------------------------------------------- */
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ----------------------------------------- section text photo -------------------------------------------------- */
+
+.m-name{
+    position: relative;
+    max-width: 950px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+
+.txt-name{
+    max-width: 500px;
+    width: 100%;
+    color: white;
+    text-align: right;
+    font-size: 4em;
+    margin-right: 80px;
+    transform: translateX(-50px);
+    opacity: 0;
+    animation: enterAnima 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@media(max-width: 650px){
+    .txt-name{
+        font-size: 3em;
+        max-width: 400px;
+        margin: 0 auto;
+        
+    }
+}
+
+@media(max-width: 430px){
+    .txt-name{
+        font-size: 2em;
+        max-width: 290px;
+        margin: 0 auto;
+    }
+    .txt-title{
+        font-size: 2em;
+    }
+    .sml{
+        font-size: 0.9em;
+    }
+}
+
+
+.sml{
+    color: #F2CB05;
+}
+
+.txt-title::after{
+    position: absolute;
+    content: '|';
+    background-color: white;
+    margin-left: 3px;
+    opacity: 1;
+    border-radius: 10px;
+    animation: txtLine 0.7s infinite;
+}
+.txt-sml::after{
+    position: absolute;
+    content: '|';
+    background-color: #F2CB05;
+    margin-left: 3px;
+    opacity: 1;
+    border-radius: 10px;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-name: txtLine;
+}
+@keyframes txtLine{
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+
+.photo{
+    width: 350px;
+    margin: 0 auto;
+}
+
+.photo img{
+    width: 350px;
+    border-radius: 10px;
+    filter: grayscale(100%);
+    transform: translateX(50px);
+    opacity: 0;
+    animation: enterAnima 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.59);
+    border: 2px solid white;
+}
+
+@media(max-width: 650px){
+    .photo img{
+        width: 250px;
+        margin: 0 auto;
+    }
+    .photo{
+        width: 250px;
+        margin: 0 auto;
+    }
+}
+
+/* ----------------------------------------- section profile -------------------------------------------------- */
+
+.profile{
+    position: relative;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.my-pro{
+    max-width: 950px;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.my-pro h1{
+    color: #F2CB05;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+.my-pro h3{
+    color: white;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin: 20px 0;
+    font-weight: 600;
+}
+.my-pro p{
+    color: white;
+    letter-spacing: 1px;
+    line-height: 2em;
+}
+
+@media(max-width: 650px){
+    .my-pro p, h1, h3{
+        color: white;
+        letter-spacing: 1px;
+        line-height: 1.5em;
+        padding: 5px;
+    }
+}
+
+
+/* ----------------------------------------- data animation -------------------------------------------------- */
+
+[data-anima]{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+[data-anima="top"]{
+    transform: translate3d(0,60px,0);   
+}
+
+@media(max-width:430px){
+    [data-anima="top"]{
+        font-size: 0.9em;
+    }
+}
+
+[data-anima].animate{
+    opacity: 1;
+    transform: translate3d(0px,0px,0px);
+}
+
+
+/* ----------------------------------------- section skills -------------------------------------------------- */
+
+.skills{
+    position: relative;
+    color: white;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.skill{
+    max-width: 950px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.skills h1{
+    font-size: 4em;
+    -webkit-text-stroke: 1px #262626;
+}
+[data-anima="left"]{
+    transform: translateX(-80px);
+    opacity: 0;
+    transition: 2s;
+}
+
+.cards{
+    margin-top: 30px;
+    position: relative;
+    width: 100%;
+    background-color: #262626;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 290px;
+    margin: 10px 10px;
+    background-color: #6b6a6a;
+    border-radius: 10px;
+    display: flex;
+}
+
+.card img{
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+}
+
+.card span{
+    width: 100%;
+    padding: 10px;
+    align-self: flex-end;
+    letter-spacing: 2px;
+    color: black;
+    font-weight: 600;
+}
+
+/* ----------------------------------------- section skills progress bar -------------------------------------------------- */
+
+.bar{
+    width: 100%;
+    height: 10px;
+    background-color: #262626;
+    border-radius: 5px;
+    display: flex;
+}
+.html{
+    transition: 0.5s;
+}
+.html:hover{
+    transform: scale(1.1);
+}
+
+.html:hover .htmlbar{
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.htmlbar{
+    width: 5%;
+    height: 10px;
+    background-color: #F2CB05;
+    border-radius: 5px;
+    display: flex;
+    justify-content: right;
+    transition: 0.5s;
+}
+.htmlbar::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #ffd500;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.htmlanimation{
+    animation: barhtml 2.5s ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+}
+
+@keyframes barhtml {
+    0%{
+
+    }
+    100%{
+        width: 90%;          
+    }
+}
+
+/* ----------------------------------------- css skills progress bar -------------------------------------------------- */
+
+.css{
+    transition: 0.5s;
+}
+.css:hover{
+    transform: scale(1.1);
+}
+
+.css:hover .cssbar{
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.cssbar{
+    width: 5%;
+    height: 10px;
+    background-color: #F2CB05;
+    border-radius: 5px;
+    display: flex;
+    justify-content: right;
+    transition: 0.5s;
+}
+.cssbar::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #ffd500;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.cssanimation{
+    animation: barcss 2s ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@keyframes barcss {
+    0%{
+
+    }
+    100%{
+        width: 80%;          
+    }
+}
+
+/* ----------------------------------------- js skills progress bar -------------------------------------------------- */
+
+.js{
+    transition: 0.5s;
+}
+.js:hover{
+    transform: scale(1.1);
+}
+
+.js:hover .jsbar{
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.jsbar{
+    width: 5%;
+    height: 10px;
+    background-color: #F2CB05;
+    border-radius: 5px;
+    display: flex;
+    justify-content: right;
+    transition: 0.5s;
+}
+.jsbar::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #ffd500;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.jsanimation{
+    animation: barjs 2s ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@keyframes barjs {
+    0%{
+
+    }
+    100%{
+        width: 65%;          
+    }
+}
+
+/* ----------------------------------------- bootstrap skills progress bar -------------------------------------------------- */
+
+.bootstrap{
+    transition: 0.5s;
+}
+.bootstrap:hover{
+    transform: scale(1.1);
+}
+
+.bootstrap:hover .bootstrapbar{
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.bootstrapbar{
+    width: 5%;
+    height: 10px;
+    background-color: #F2CB05;
+    border-radius: 5px;
+    display: flex;
+    justify-content: right;
+    transition: 0.5s;
+}
+.bootstrapbar::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #ffd500;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.bootstrapanimation{
+    animation: barbootstrap 2s ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@keyframes barbootstrap {
+    0%{
+
+    }
+    100%{
+        width: 65%;          
+    }
+}
+
+/* ----------------------------------------- php skills progress bar -------------------------------------------------- */
+
+.php{
+    transition: 0.5s;
+}
+.php:hover{
+    transform: scale(1.1);
+}
+
+.php:hover .phpbar{
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.phpbar{
+    width: 5%;
+    height: 10px;
+    background-color: #F2CB05;
+    border-radius: 5px;
+    display: flex;
+    justify-content: right;
+    transition: 0.5s;
+}
+.phpbar::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #ffd500;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.phpanimation{
+    animation: barphp 3s ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes barphp {
+    0%{
+
+    }
+    100%{
+        width: 70%;          
+    }
+}
+
+/* ----------------------------------------- laravel skills progress bar -------------------------------------------------- */
+
+.laravel{
+    transition: 0.5s;
+}
+.laravel:hover{
+    transform: scale(1.1);
+}
+
+.laravel:hover .laravelbar{
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.laravelbar{
+    width: 5%;
+    height: 10px;
+    background-color: #F2CB05;
+    border-radius: 5px;
+    display: flex;
+    justify-content: right;
+    transition: 0.5s;
+}
+.laravelbar::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #ffd500;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.laravelanimation{
+    animation: barlaravel 2s ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@keyframes barlaravel {
+    0%{
+
+    }
+    100%{
+        width: 15%;          
+    }
+}
+
+/* ----------------------------------------- mysql skills progress bar -------------------------------------------------- */
+
+.mysql{
+    transition: 0.5s;
+}
+.mysql:hover{
+    transform: scale(1.1);
+}
+
+.mysql:hover .mysqlbar{
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.mysqlbar{
+    width: 5%;
+    height: 10px;
+    background-color: #F2CB05;
+    border-radius: 5px;
+    display: flex;
+    justify-content: right;
+    transition: 0.5s;
+}
+.mysqlbar::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #ffd500;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+}
+
+.mysqlanimation{
+    animation: barmysql 2s ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+
+@keyframes barmysql {
+    0%{
+
+    }
+    100%{
+        width: 45%;          
+    }
+}
+
+/* ----------------------------------------- portfolio -------------------------------------------------- */
+
+.portfolio{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    /* flex-direction: column; */
+}
+
+.controller{
+    max-width: 950px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.portfolio-container{
+    width: 100%;
+    background-color: #262626;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px 0;
+    z-index: 10000;
+}
+
+.portfolio h1{
+    font-size: 4em;
+    color: white;
+    -webkit-text-stroke: 1px black;
+}
+
+@media(max-width:430px){
+    .txtportfolio{
+        max-width: 350px;
+        font-size: 0.5em;
+    }
+}
+
+/* ----------------------------------------- sites -------------------------------------------------- */
+
+
+.works{
+    width: 250px;
+    border-radius: 10px;
+    display: flex;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.work{
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+}
+
+
+.txt-works{
+    color: white;
+    width: 100%;
+    background-color: #262626;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    box-shadow: 0 0 1px black;
+}
+
+.controls{
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    margin: 0px 0 20px 0;
+}
+
+.controls a{
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.controls a:hover{
+    color: #F2CB05;
+    text-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05,
+                0 0 30px #F2CB05,
+                0 0 40px #ffd500,
+                0 0 50px #ffd500;
+    transform: scale(1.2);
+}
+
+.sites{
+    /* width: 100%; */
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+}
+
+/* ----------------------------------------- portfolio amorim -------------------------------------------------- */
+
+.amorimimg{
+    background-image: url(../img/img-port/amorin-1.png);
+    background-size: cover;
+}
+
+@media(max-width:430px){
+    .amorimimg{
+        width: 235px;
+    }
+    .amorimimg:hover{
+        width: 235px;
+    }
+    .amorim{
+        width: 235px;
+    }
+}
+
+
+.amorim:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05;     
+}
+
+.amorimimg:hover{
+    animation: amorimAnimation 6s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes amorimAnimation {
+    0%{
+        background-image: url(../img/img-port/amorin-1.png);
+    }25%{
+        background-image: url(../img/img-port/amorim-2.png);
+    }75%{
+        background-image: url(../img/img-port/amorim-3.png);
+    }
+}
+
+/* ----------------------------------------- portfolio moviestar -------------------------------------------------- */
+
+
+.moviestarimg{
+    background-image: url(../moviestar/1.png);
+    background-size: cover;
+}
+
+@media(max-width:430px){
+    .moviestarimg{
+        width: 235px;
+    }
+    .moviestarimg:hover{
+        width: 235px;
+    }
+    .moviestar{
+        width: 235px;
+    }
+}
+
+
+.moviestar:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #F2CB05,
+                0 0 20px #F2CB05;     
+}
+
+.moviestarimg:hover{
+    animation: movieStarAnimation 6s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes movieStarAnimation {
+    0%{
+        background-image: url(../moviestar/2.png);
+    }25%{
+        background-image: url(../moviestar/3.png);
+    }75%{
+        background-image: url(../moviestar/4.png);
+    }
+}
+
+
+/* ----------------------------------------- footer -------------------------------------------------- */
+
+.footer{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.contact{
+    max-width: 950px;
+    background-color: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+@media(max-width:450px){
+    .contact{
+        flex-direction: column;
+    }
+}
+
+.icons-redes img{
+    margin: 10px;
+}
